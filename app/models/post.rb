@@ -8,6 +8,6 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :tags, reject_if: proc { |attributes| attributes['name'].blank? }
 
   def tags_attributes=(tag_attributes)
-    raise tag_attributes.inspect
+    binding.pry
   end
 end
