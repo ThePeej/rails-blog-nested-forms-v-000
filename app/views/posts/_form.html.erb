@@ -25,8 +25,9 @@
 
 
   <%= fields_for :tags, @post.tags.build do |tag| %>
-    <p>New Tag:</p>
+    <p>New Tag:
     <%= tag.text_field :name %>
+    </p>
     <%= tag.submit %>
   <% end %>
 
