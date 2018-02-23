@@ -21,10 +21,10 @@
 
   <div class="field">
     <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
-    <%= f.fields_for :tags, @post.tags.build do |tag_fields| %>
+    <%= f.fields_for :tags, @post.tags.build do |tags_fields| %>
       New Tag:
-      <%= tag_fields
-      <%= tag_fields.text_field :name %>
+      <%= tags_fields.label :name %>
+      <%= tags_fields.text_field :name %>
     <% end %>
   </div>
 
