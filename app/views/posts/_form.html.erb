@@ -27,7 +27,6 @@
     <%= f.fields_for :tags, @post.tags.build do |tag| %>
       New Tag:
       <%= tag.text_field :name %>
-      <!-- <%= tag.submit %> -->
     <% end %>
   </div>
   <br>
