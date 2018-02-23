@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
   def tags_attributes=(tag_attributes)
     # {"0"=>{"name"=>"TESTING"}}
     tag_attributes.each do |i,tag_attribute|
-      self.tags << Tag.find_or_create_by(tag_attribute)
+      self.tags << Tag.find_or_create_by(tag_attribute) if tag_attribute[:name] != ""
     end
   end
 end
