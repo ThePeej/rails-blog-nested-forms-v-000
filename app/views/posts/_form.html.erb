@@ -23,9 +23,9 @@
     <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
   </div>
 
-    
+
   <%= fields_for :tags, @post.tags.build do |tag| %>
-    <%= tag.label :name %>
+    <p>New Tag:</p>
     <%= tag.text_field :name %>
     <%= tag.submit %>
   <% end %>
