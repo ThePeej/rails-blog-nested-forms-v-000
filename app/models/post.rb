@@ -8,6 +8,9 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :tags, reject_if: proc { |attributes| attributes['name'].blank? }
 
   def tags_attributes=(tag_attributes)
-    binding.pry
+    # {"0"=>{"name"=>"TESTING"}}
+    tag_attributes.each do |i,tag_attribute|
+      self.tags << Tag.find_or_create_by(tag_attribute)
+    end
   end
 end
